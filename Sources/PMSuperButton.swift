@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 class PMSuperButton: UIButton {
     
+    //MARK: Appearance
     @IBInspectable var borderColor: UIColor = UIColor.clear{
         didSet{
             self.layer.borderColor = borderColor.cgColor
@@ -47,42 +48,35 @@ class PMSuperButton: UIButton {
         }
     }
     
-    //checkbox button functionality
-    @IBInspectable var checkboxButton: Bool = false
+    
+    //MARK: Toggle
+    @IBInspectable var checkboxButton: Bool = false{
+        didSet{
+            if checkboxButton == true{
+                self.setImage(uncheckedImage, for: .normal)
+                self.setImage(checkedImage, for: .selected)
+                self.addTarget(self, action: #selector(buttonChecked), for: .touchUpInside)
+            }
+        }
+    }
     @IBInspectable var uncheckedImage: UIImage = UIImage()
     @IBInspectable var checkedImage: UIImage = UIImage()
     
     //Image inside UIButton
-    @IBInspectable var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue
+    @IBInspectable var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
+        didSet{
+            imageView?.contentMode = UIViewContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
+        }
+    }
     
     private var action: (() -> Void)?
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.customize()
         self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
     
     override func prepareForInterfaceBuilder() {
-        customize()
-    }
-    
-    func customize(){
-//        self.layer.borderColor = borderColor.cgColor
-//        self.layer.borderWidth = borderWidth
-//        self.layer.cornerRadius = cornerRadius
-//        self.layer.shadowColor = shadowColor.cgColor
-//        self.layer.shadowOpacity = shadowOpacity
-//        self.layer.shadowOffset = shadowOffset
-//        self.layer.shadowRadius = shadowRadius
-        
-        if checkboxButton == true{
-            self.setImage(self.uncheckedImage, for: .normal)
-            self.setImage(self.checkedImage, for: .selected)
-            self.addTarget(self, action: #selector(buttonChecked), for: .touchUpInside)
-        }
-        
-        imageView?.contentMode = UIViewContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
     }
     
     func buttonChecked(sender:AnyObject){
