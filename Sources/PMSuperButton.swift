@@ -50,9 +50,9 @@ class PMSuperButton: UIButton {
     
     
     //MARK: Toggle
-    @IBInspectable var checkboxButton: Bool = false{
+    @IBInspectable var toggleButton: Bool = false{
         didSet{
-            if checkboxButton == true{
+            if toggleButton == true{
                 self.setImage(uncheckedImage, for: .normal)
                 self.setImage(checkedImage, for: .selected)
                 self.addTarget(self, action: #selector(buttonChecked), for: .touchUpInside)
@@ -63,9 +63,9 @@ class PMSuperButton: UIButton {
     @IBInspectable var checkedImage: UIImage = UIImage()
     
     //Image inside UIButton
-    @IBInspectable var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
+    @IBInspectable var imageContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
         didSet{
-            imageView?.contentMode = UIViewContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
+            imageView?.contentMode = UIViewContentMode(rawValue: imageContentMode) ?? .scaleToFill
         }
     }
     
