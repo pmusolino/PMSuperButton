@@ -24,10 +24,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-2" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-GZ-boJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mas-24-YKL" customClass="PMSuperButton" customModule="PMSuperButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mas-24-YKL" customClass="PMSuperButton" customModule="PMSuperButton">
                                 <rect key="frame" x="118" y="126" width="138" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="K1W-99-gZB"/>
+                                    <constraint firstAttribute="height" constant="66" id="cPf-yz-Okl"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -37,16 +40,34 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME3-ob-e7r" customClass="PMSuperButton">
+                                <rect key="frame" x="122.5" y="330" width="130" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.53725490200000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tOj-o7-Lar"/>
+                                    <constraint firstAttribute="width" constant="130" id="uZW-pI-7jS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Mas-24-YKL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="7RG-Tb-aSK"/>
+                            <constraint firstItem="ME3-ob-e7r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9Q-az-KcE"/>
+                            <constraint firstItem="Mas-24-YKL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BxH-QY-fok"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lbp-GZ-boJ" secondAttribute="bottom" id="Hgo-8d-UCw"/>
                             <constraint firstAttribute="trailing" secondItem="Lbp-GZ-boJ" secondAttribute="trailing" id="Ois-Dh-umc"/>
                             <constraint firstItem="Lbp-GZ-boJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U1x-qr-U1o"/>
+                            <constraint firstItem="ME3-ob-e7r" firstAttribute="top" secondItem="Mas-24-YKL" secondAttribute="bottom" constant="138" id="c1b-QT-MI9"/>
                             <constraint firstItem="Lbp-GZ-boJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fBf-MH-Cp6"/>
                         </constraints>
                     </view>

@@ -11,15 +11,41 @@ import UIKit
 @IBDesignable
 class PMSuperButton: UIButton {
     
-    private var action: (() -> Void)?
-    
-    @IBInspectable var borderColor: UIColor = UIColor.clear
-    @IBInspectable var borderWidth: CGFloat = 0
-    @IBInspectable var cornerRadius: CGFloat = 0
-    @IBInspectable var shadowColor: UIColor = UIColor.clear
-    @IBInspectable var shadowOpacity: Float = 0
-    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0)
-    @IBInspectable var shadowRadius: CGFloat = 0
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        didSet{
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    @IBInspectable var borderWidth: CGFloat = 0{
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    @IBInspectable var cornerRadius: CGFloat = 0{
+        didSet{
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+    @IBInspectable var shadowColor: UIColor = UIColor.clear{
+        didSet{
+            self.layer.shadowColor = shadowColor.cgColor
+        }
+    }
+    @IBInspectable var shadowOpacity: Float = 0{
+        didSet{
+            self.layer.shadowOpacity = shadowOpacity
+        }
+    }
+    @IBInspectable var shadowOffset: CGSize = CGSize.zero{
+        didSet{
+            self.layer.shadowOffset = shadowOffset
+        }
+    }
+    @IBInspectable var shadowRadius: CGFloat = 0{
+        didSet{
+            self.layer.shadowRadius = shadowRadius
+        }
+    }
     
     //checkbox button functionality
     @IBInspectable var checkboxButton: Bool = false
@@ -29,6 +55,7 @@ class PMSuperButton: UIButton {
     //Image inside UIButton
     @IBInspectable var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue
     
+    private var action: (() -> Void)?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -41,13 +68,13 @@ class PMSuperButton: UIButton {
     }
     
     func customize(){
-        self.layer.borderColor = self.borderColor.cgColor
-        self.layer.borderWidth = self.borderWidth
-        self.layer.cornerRadius = self.cornerRadius
-        self.layer.shadowColor = self.shadowColor.cgColor
-        self.layer.shadowOpacity = self.shadowOpacity
-        self.layer.shadowOffset = self.shadowOffset
-        self.layer.shadowRadius = self.shadowRadius
+//        self.layer.borderColor = borderColor.cgColor
+//        self.layer.borderWidth = borderWidth
+//        self.layer.cornerRadius = cornerRadius
+//        self.layer.shadowColor = shadowColor.cgColor
+//        self.layer.shadowOpacity = shadowOpacity
+//        self.layer.shadowOffset = shadowOffset
+//        self.layer.shadowRadius = shadowRadius
         
         if checkboxButton == true{
             self.setImage(self.uncheckedImage, for: .normal)
