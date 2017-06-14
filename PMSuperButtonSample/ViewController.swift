@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PMSuperButton
 
 class ViewController: UIViewController {
 

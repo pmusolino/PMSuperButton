@@ -12,6 +12,7 @@
 		454FFF681EF1927A00F1C34C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFF661EF1927A00F1C34C /* Main.storyboard */; };
 		454FFF6A1EF1927A00F1C34C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454FFF691EF1927A00F1C34C /* Assets.xcassets */; };
 		454FFF6D1EF1927A00F1C34C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFF6B1EF1927A00F1C34C /* LaunchScreen.storyboard */; };
+		454FFF7B1EF19C6900F1C34C /* PMSuperButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* PMSuperButton.framework */; };
 		52D6D9871BEFF229002C0205 /* PMSuperButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* PMSuperButton.framework */; };
 		8933C7851EB5B820000D00A4 /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* PMSuperButton.swift */; };
 		8933C7881EB5B820000D00A4 /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* PMSuperButton.swift */; };
@@ -21,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		454FFF7C1EF19CA000F1C34C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
+			remoteInfo = "PMSuperButton-iOS";
+		};
 		52D6D9881BEFF229002C0205 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454FFF7B1EF19C6900F1C34C /* PMSuperButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +214,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				454FFF7D1EF19CA000F1C34C /* PBXTargetDependency */,
 			);
 			name = PMSuperButtonSample;
 			productName = PMSuperButtonSample;
@@ -423,6 +433,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		454FFF7D1EF19CA000F1C34C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6D97B1BEFF229002C0205 /* PMSuperButton-iOS */;
+			targetProxy = 454FFF7C1EF19CA000F1C34C /* PBXContainerItemProxy */;
+		};
 		52D6D9891BEFF229002C0205 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52D6D97B1BEFF229002C0205 /* PMSuperButton-iOS */;
@@ -737,6 +752,7 @@
 				454FFF701EF1927A00F1C34C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52D6D9761BEFF229002C0205 /* Build configuration list for PBXProject "PMSuperButton" */ = {
 			isa = XCConfigurationList;

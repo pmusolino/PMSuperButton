@@ -67,7 +67,7 @@ class PMSuperButton: UIButton {
         self.action = action
     }
     
-    func tapped(sender: DTButton) {
+    func tapped(sender: PMSuperButton) {
         self.action?()
     }
 }
