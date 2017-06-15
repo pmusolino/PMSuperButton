@@ -2,14 +2,14 @@
 //  PMSuperButton.swift
 //  PMSuperButton
 //
-//  Created by Paolo Musolino on {TODAY}.
+//  Created by Paolo Musolino on 14/06/17.
 //  Copyright © 2017 PMSuperButton. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class PMSuperButton: UIButton {
+open class PMSuperButton: UIButton {
     
     //MARK: Appearance
     @IBInspectable var borderColor: UIColor = UIColor.clear{
@@ -48,7 +48,6 @@ class PMSuperButton: UIButton {
         }
     }
     
-    
     //MARK: Toggle
     @IBInspectable var toggleButton: Bool = false{
         didSet{
@@ -62,33 +61,51 @@ class PMSuperButton: UIButton {
     @IBInspectable var uncheckedImage: UIImage = UIImage()
     @IBInspectable var checkedImage: UIImage = UIImage()
     
-    //Image inside UIButton
+    //MARK: Image UIButton content mode
     @IBInspectable var imageContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
         didSet{
             imageView?.contentMode = UIViewContentMode(rawValue: imageContentMode) ?? .scaleToFill
         }
     }
     
-    override func layoutSubviews() {
+    func buttonChecked(sender:AnyObject){
+        self.isSelected = !self.isSelected
+    }
+    
+    //MARK: Interface Builder
+    override open func layoutSubviews() {
         super.layoutSubviews()
         self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
     
-    override func prepareForInterfaceBuilder() {
-    }
-    
-    func buttonChecked(sender:AnyObject){
-        self.isSelected = !self.isSelected
+    override open func prepareForInterfaceBuilder() {
     }
     
     //MARK: Action Closure
     private var action: (() -> Void)?
     
-    func touchUpInside(action: (() -> Void)? = nil){
+    open func touchUpInside(action: (() -> Void)? = nil){
         self.action = action
     }
     
     func tapped(sender: PMSuperButton) {
         self.action?()
+    }
+    
+    //MARK: Loading
+    let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    open func showLoader(){
+        indicator.center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
+        indicator.startAnimating()
+        UIView.transition(with: self, duration: 0.5, options: .curveEaseOut, animations: {
+            
+        }) { (finished) in
+            self.addSubview(self.indicator)
+        }
+    }
+    
+    open func hideLoader(){
+        indicator.removeFromSuperview()
     }
 }

@@ -2,7 +2,7 @@
 //  PMSuperButtonTests.swift
 //  PMSuperButton
 //
-//  Created by Paolo Musolino on {TODAY}.
+//  Created by Paolo Musolino on 14/06/17.
 //  Copyright © 2017 PMSuperButton. All rights reserved.
 //
 
