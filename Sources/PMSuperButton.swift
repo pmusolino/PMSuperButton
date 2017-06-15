@@ -69,8 +69,6 @@ class PMSuperButton: UIButton {
         }
     }
     
-    private var action: (() -> Void)?
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
@@ -84,6 +82,8 @@ class PMSuperButton: UIButton {
     }
     
     //MARK: Action Closure
+    private var action: (() -> Void)?
+    
     func touchUpInside(action: (() -> Void)? = nil){
         self.action = action
     }
