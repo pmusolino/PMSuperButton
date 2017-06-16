@@ -12,44 +12,44 @@ import UIKit
 open class PMSuperButton: UIButton {
     
     //MARK: Appearance
-    @IBInspectable var borderColor: UIColor = UIColor.clear{
+    @IBInspectable open var borderColor: UIColor = UIColor.clear{
         didSet{
             self.layer.borderColor = borderColor.cgColor
         }
     }
-    @IBInspectable var borderWidth: CGFloat = 0{
+    @IBInspectable open var borderWidth: CGFloat = 0{
         didSet{
             self.layer.borderWidth = borderWidth
         }
     }
-    @IBInspectable var cornerRadius: CGFloat = 0{
+    @IBInspectable open var cornerRadius: CGFloat = 0{
         didSet{
             self.layer.cornerRadius = cornerRadius
         }
     }
-    @IBInspectable var shadowColor: UIColor = UIColor.clear{
+    @IBInspectable open var shadowColor: UIColor = UIColor.clear{
         didSet{
             self.layer.shadowColor = shadowColor.cgColor
         }
     }
-    @IBInspectable var shadowOpacity: Float = 0{
+    @IBInspectable open var shadowOpacity: Float = 0{
         didSet{
             self.layer.shadowOpacity = shadowOpacity
         }
     }
-    @IBInspectable var shadowOffset: CGSize = CGSize.zero{
+    @IBInspectable open var shadowOffset: CGSize = CGSize.zero{
         didSet{
             self.layer.shadowOffset = shadowOffset
         }
     }
-    @IBInspectable var shadowRadius: CGFloat = 0{
+    @IBInspectable open var shadowRadius: CGFloat = 0{
         didSet{
             self.layer.shadowRadius = shadowRadius
         }
     }
     
     //MARK: Toggle
-    @IBInspectable var toggleButton: Bool = false{
+    @IBInspectable open var toggleButton: Bool = false{
         didSet{
             if toggleButton == true{
                 self.setImage(uncheckedImage, for: .normal)
@@ -58,11 +58,11 @@ open class PMSuperButton: UIButton {
             }
         }
     }
-    @IBInspectable var uncheckedImage: UIImage = UIImage()
-    @IBInspectable var checkedImage: UIImage = UIImage()
+    @IBInspectable open var uncheckedImage: UIImage?
+    @IBInspectable open var checkedImage: UIImage?
     
     //MARK: Image UIButton content mode
-    @IBInspectable var imageContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
+    @IBInspectable open var imageContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
         didSet{
             imageView?.contentMode = UIViewContentMode(rawValue: imageContentMode) ?? .scaleToFill
         }
@@ -94,18 +94,40 @@ open class PMSuperButton: UIButton {
     
     //MARK: Loading
     let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    var titleAfterLoading: String?
     
-    open func showLoader(){
+    /**
+     Show a loader inside the button, and enable or disable user interection while loading
+     */
+    open func showLoader(userInteraction: Bool = true){
+        guard self.subviews.contains(indicator) == false else {
+            return
+        }
+        self.isUserInteractionEnabled = userInteraction
         indicator.center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
-        indicator.startAnimating()
-        UIView.transition(with: self, duration: 0.5, options: .curveEaseOut, animations: {
-            
-        }) { (finished) in
+        
+        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.titleAfterLoading = self.titleLabel?.text
+            self.setTitle("", for: .normal)
             self.addSubview(self.indicator)
+        }) { (finished) in
+            self.indicator.startAnimating()
         }
     }
     
     open func hideLoader(){
-        indicator.removeFromSuperview()
+        guard self.subviews.contains(indicator) == true else {
+            return
+        }
+        
+        self.isUserInteractionEnabled = true
+        self.indicator.stopAnimating()
+        self.indicator.removeFromSuperview()
+        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.titleLabel?.alpha = 1.0
+            self.setTitle(self.titleAfterLoading, for: .normal)
+        }) { (finished) in
+            self.titleAfterLoading = nil
+        }
     }
 }

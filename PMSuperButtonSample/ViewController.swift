@@ -12,24 +12,28 @@ import PMSuperButton
 class ViewController: UIViewController {
 
     @IBOutlet weak var firstButton: PMSuperButton!
+    @IBOutlet weak var secondButton: PMSuperButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        firstButton.touchUpInside {
+            self.firstButton.showLoader()
+            print("Hello World")
+        }
         
+        secondButton.touchUpInside {
+            self.firstButton.hideLoader()
+        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        firstButton.touchUpInside {
-            self.firstButton.showLoader()
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
