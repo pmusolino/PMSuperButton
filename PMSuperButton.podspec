@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
     PMSuperButton is a standard UIButton coming from the countryside, but with super powers!
   DESC
-  s.homepage     = ""
+  s.homepage     = "https://github.com/Codeido/PMSuperButton"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Paolo Musolino" => "info@codeido.com" }
   s.social_media_url   = "https://github.com/Codeido/PMSuperButton"
