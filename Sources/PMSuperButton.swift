@@ -48,6 +48,7 @@ open class PMSuperButton: UIButton {
         }
     }
     
+    //MARK: Animations
     @IBInspectable open var animatedScaleWhenHighlighted: CGFloat = 1.0
     @IBInspectable open var animatedScaleDurationWhenHightlighted: Double = 0.2
     
@@ -58,7 +59,7 @@ open class PMSuperButton: UIButton {
             }
             
             if isHighlighted{
-                UIView.animate(withDuration: animatedScaleDurationWhenHightlighted, animations: { 
+                UIView.animate(withDuration: animatedScaleDurationWhenHightlighted, animations: {
                     self.transform = CGAffineTransform(scaleX: self.animatedScaleWhenHighlighted, y: self.animatedScaleWhenHighlighted)
                 })
             }
@@ -89,6 +90,14 @@ open class PMSuperButton: UIButton {
         }
     }
     
+    //MARK: Ripple button
+    @IBInspectable open var ripple: Bool = false{
+        didSet{
+            self.clipsToBounds = true
+        }
+    }
+    @IBInspectable open var rippleColor: UIColor = UIColor(white: 1.0, alpha: 0.3)
+    @IBInspectable open var rippleSpeed: Double = 1.0
     
     //MARK: Checkbox
     @IBInspectable open var checkboxButton: Bool = false{
@@ -171,6 +180,63 @@ open class PMSuperButton: UIButton {
             self.setTitle(self.titleAfterLoading, for: .normal)
         }) { (finished) in
             self.titleAfterLoading = nil
+        }
+    }
+    
+    //MARK: Material touch animation for ripple button
+    open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
+        guard ripple == true else {
+            return true
+        }
+        
+        let tapLocation = touch.location(in: self)
+        
+        let aLayer = CALayer()
+        aLayer.backgroundColor = rippleColor.cgColor
+        let initialSize: CGFloat = 20.0
+        
+        aLayer.frame = CGRect(x: 0, y: 0, width: initialSize, height: initialSize)
+        aLayer.cornerRadius = initialSize/2
+        aLayer.masksToBounds = true
+        aLayer.position = tapLocation
+        self.layer.insertSublayer(aLayer, below: self.titleLabel?.layer)
+        
+        // Create a basic animation changing the transform.scale value
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        
+        // Set the initial and the final values+
+        animation.toValue = 10.5 * max(self.frame.size.width, self.frame.size.height) / initialSize
+        
+        // Set duration
+        animation.duration = rippleSpeed
+        
+        // Set animation to be consistent on completion
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = kCAFillModeForwards
+        
+        // Add animation to the view's layer
+        let fade = CAKeyframeAnimation(keyPath: "opacity")
+        fade.values = [1.0, 1.0, 0.5, 0.5, 0.0]
+        fade.duration = 0.5
+        
+        let animGroup = CAAnimationGroup()
+        animGroup.duration = 0.5
+        animGroup.delegate = self
+        animGroup.animations = [animation, fade]
+        animGroup.setValue(aLayer, forKey: "animationLayer")
+        aLayer.add(animGroup, forKey: "scale")
+        
+        return true
+    }
+}
+
+extension PMSuperButton: CAAnimationDelegate{
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        let layer: CALayer? = anim.value(forKeyPath: "animationLayer") as? CALayer
+        if layer != nil{
+            layer?.removeAnimation(forKey: "scale")
+            layer?.removeFromSuperlayer()
         }
     }
 }
