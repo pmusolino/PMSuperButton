@@ -58,6 +58,22 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleWhenHighlighted">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEo-zV-4BK" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="163" y="454" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="material_checkbox"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="material_checkbox_checked"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="material_checkbox"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checkboxButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleWhenSelected">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
@@ -85,5 +101,7 @@
     </scenes>
     <resources>
         <image name="background-2" width="16" height="16"/>
+        <image name="material_checkbox" width="18" height="18"/>
+        <image name="material_checkbox_checked" width="18" height="18"/>
     </resources>
 </document>

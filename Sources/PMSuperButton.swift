@@ -48,6 +48,48 @@ open class PMSuperButton: UIButton {
         }
     }
     
+    @IBInspectable open var animatedScaleWhenHighlighted: CGFloat = 1.0
+    @IBInspectable open var animatedScaleDurationWhenHightlighted: Double = 0.2
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            guard animatedScaleWhenHighlighted != 1.0 else {
+                return
+            }
+            
+            if isHighlighted{
+                UIView.animate(withDuration: animatedScaleDurationWhenHightlighted, animations: { 
+                    self.transform = CGAffineTransform(scaleX: self.animatedScaleWhenHighlighted, y: self.animatedScaleWhenHighlighted)
+                })
+            }
+            else{
+                UIView.animate(withDuration: animatedScaleDurationWhenHightlighted, animations: {
+                    self.transform = CGAffineTransform.identity
+                })
+            }
+        }
+    }
+    
+    @IBInspectable open var animatedScaleWhenSelected: CGFloat = 1.0
+    @IBInspectable open var animatedScaleDurationWhenSelected: Double = 0.2
+    
+    override open var isSelected: Bool{
+        didSet {
+            guard animatedScaleWhenSelected != 1.0 else {
+                return
+            }
+            
+            UIView.animate(withDuration: animatedScaleDurationWhenSelected, animations: {
+                self.transform = CGAffineTransform(scaleX: self.animatedScaleWhenSelected, y: self.animatedScaleWhenSelected)
+            }) { (finished) in
+                UIView.animate(withDuration: self.animatedScaleDurationWhenSelected, animations: {
+                    self.transform = CGAffineTransform.identity
+                })
+            }
+        }
+    }
+    
+    
     //MARK: Checkbox
     @IBInspectable open var checkboxButton: Bool = false{
         didSet{
@@ -58,8 +100,9 @@ open class PMSuperButton: UIButton {
             }
         }
     }
-    @IBInspectable open var uncheckedImage: UIImage?
     @IBInspectable open var checkedImage: UIImage?
+    @IBInspectable open var uncheckedImage: UIImage?
+    
     
     //MARK: Image UIButton content mode
     @IBInspectable open var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
