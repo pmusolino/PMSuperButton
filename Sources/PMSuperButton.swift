@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 open class PMSuperButton: UIButton {
     
-    //MARK: Appearance
+    //MARK: - General Appearance
     @IBInspectable open var borderColor: UIColor = UIColor.clear{
         didSet{
             self.layer.borderColor = borderColor.cgColor
@@ -47,8 +47,49 @@ open class PMSuperButton: UIButton {
             self.layer.shadowRadius = shadowRadius
         }
     }
+    @IBInspectable open var gradientEnabled: Bool = false{
+        didSet{
+            setupGradient()
+        }
+    }
     
-    //MARK: Animations
+    //MARK: - Gradient Background
+    @IBInspectable open var gradientStartColor: UIColor = UIColor.clear{
+        didSet{
+            setupGradient()
+        }
+    }
+    @IBInspectable open var gradientEndColor: UIColor = UIColor.clear{
+        didSet{
+            setupGradient()
+        }
+    }
+    @IBInspectable open var gradientHorizontal: Bool = false{
+        didSet{
+            setupGradient()
+        }
+    }
+    var gradient: CAGradientLayer?
+    
+    func setupGradient(){
+        guard gradientEnabled != false else{
+            return
+        }
+        
+        gradient?.removeFromSuperlayer()
+        gradient = CAGradientLayer()
+        gradient!.frame = self.layer.bounds
+        gradient!.colors = [gradientStartColor.cgColor, gradientEndColor.cgColor]
+        gradient!.startPoint = CGPoint(x: 0, y: 0)
+        if (gradientHorizontal){
+            gradient!.endPoint = CGPoint(x: 1, y: 0)
+        }else{
+            gradient!.endPoint = CGPoint(x: 0, y: 1)
+        }
+        self.layer.addSublayer(gradient!)
+    }
+    
+    //MARK: - Animations
     @IBInspectable open var animatedScaleWhenHighlighted: CGFloat = 1.0
     @IBInspectable open var animatedScaleDurationWhenHightlighted: Double = 0.2
     
@@ -90,7 +131,7 @@ open class PMSuperButton: UIButton {
         }
     }
     
-    //MARK: Ripple button
+    //MARK: - Ripple button
     @IBInspectable open var ripple: Bool = false{
         didSet{
             self.clipsToBounds = true
@@ -99,7 +140,7 @@ open class PMSuperButton: UIButton {
     @IBInspectable open var rippleColor: UIColor = UIColor(white: 1.0, alpha: 0.3)
     @IBInspectable open var rippleSpeed: Double = 1.0
     
-    //MARK: Checkbox
+    //MARK: - Checkbox
     @IBInspectable open var checkboxButton: Bool = false{
         didSet{
             if checkboxButton == true{
@@ -113,7 +154,7 @@ open class PMSuperButton: UIButton {
     @IBInspectable open var uncheckedImage: UIImage?
     
     
-    //MARK: Image UIButton content mode
+    //MARK: - Image UIButton content mode
     @IBInspectable open var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
         didSet{
             imageView?.contentMode = UIViewContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
@@ -124,16 +165,7 @@ open class PMSuperButton: UIButton {
         self.isSelected = !self.isSelected
     }
     
-    //MARK: Interface Builder
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-    }
-    
-    override open func prepareForInterfaceBuilder() {
-    }
-    
-    //MARK: Action Closure
+    //MARK: - Action Closure
     private var action: (() -> Void)?
     
     open func touchUpInside(action: (() -> Void)? = nil){
@@ -144,7 +176,7 @@ open class PMSuperButton: UIButton {
         self.action?()
     }
     
-    //MARK: Loading
+    //MARK: - Loading
     let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     var titleAfterLoading: String?
     
@@ -182,6 +214,18 @@ open class PMSuperButton: UIButton {
             self.titleAfterLoading = nil
         }
     }
+    
+    //MARK: - Interface Builder Methods
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+    }
+    
+    override open func prepareForInterfaceBuilder() {
+    }
+}
+
+extension PMSuperButton: CAAnimationDelegate{
     
     //MARK: Material touch animation for ripple button
     open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -229,9 +273,7 @@ open class PMSuperButton: UIButton {
         
         return true
     }
-}
-
-extension PMSuperButton: CAAnimationDelegate{
+    
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         let layer: CALayer? = anim.value(forKeyPath: "animationLayer") as? CALayer
         if layer != nil{

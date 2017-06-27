@@ -3,15 +3,18 @@
 </p>
 
 [![Language](https://img.shields.io/badge/Swift-3-orange.svg)]()
-[![GitHub license](https://img.shields.io/cocoapods/l/PMAlertController.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
+[![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
 
 PMSuperButton is a standard UIButton coming from the countryside, but with super powers!
 
 
 ##Top 100 Coolest Super Powers:
+
 - Edit everything directly from storyboard or code
 - Change border color, width
 - Change corner radius
+- Set a gradient background
 - Edit everything about the shadows: color, opacity, offset
 - Animations when the button is highlighted
 - Animations when the button is selected
@@ -23,3 +26,13 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
 - and many more
 
 Very easy to integrate in every project!
+
+## Usage
+The library allow you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard.
+
+
+## Requirements
+
+- iOS 8.0+
+- Xcode 8+
+
