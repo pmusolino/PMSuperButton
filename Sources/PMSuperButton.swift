@@ -86,7 +86,7 @@ open class PMSuperButton: UIButton {
         }else{
             gradient!.endPoint = CGPoint(x: 0, y: 1)
         }
-        self.layer.addSublayer(gradient!)
+        self.layer.insertSublayer(gradient!, below: self.imageView?.layer)
     }
     
     //MARK: - Animations
@@ -153,16 +153,23 @@ open class PMSuperButton: UIButton {
     @IBInspectable open var checkedImage: UIImage?
     @IBInspectable open var uncheckedImage: UIImage?
     
+    func buttonChecked(sender:AnyObject){
+        self.isSelected = !self.isSelected
+    }
     
-    //MARK: - Image UIButton content mode
+    //MARK: - Image
+    ///Image UIButton content mode
     @IBInspectable open var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
         didSet{
             imageView?.contentMode = UIViewContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
         }
     }
-    
-    func buttonChecked(sender:AnyObject){
-        self.isSelected = !self.isSelected
+    @IBInspectable open var imageAlpha: CGFloat = 1.0 {
+        didSet {
+            if let imageView = imageView {
+                imageView.alpha = imageAlpha
+            }
+        }
     }
     
     //MARK: - Action Closure
@@ -179,6 +186,7 @@ open class PMSuperButton: UIButton {
     //MARK: - Loading
     let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     var titleAfterLoading: String?
+    var imageAfterLoading: UIImage?
     
     /**
      Show a loader inside the button, and enable or disable user interection while loading
@@ -188,13 +196,13 @@ open class PMSuperButton: UIButton {
             return
         }
         self.isUserInteractionEnabled = userInteraction
+        indicator.isUserInteractionEnabled = false
         indicator.center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
-        
-        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            self.titleAfterLoading = self.titleLabel?.text
-            self.setTitle("", for: .normal)
-            self.addSubview(self.indicator)
+        UIView.transition(with: self, duration: 0.5, options: .curveEaseOut, animations: {
+            self.titleLabel?.alpha = 0.0
+            self.imageAlpha = 0.0
         }) { (finished) in
+            self.addSubview(self.indicator)
             self.indicator.startAnimating()
         }
     }
@@ -207,17 +215,19 @@ open class PMSuperButton: UIButton {
         self.isUserInteractionEnabled = true
         self.indicator.stopAnimating()
         self.indicator.removeFromSuperview()
-        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: self, duration: 0.5, options: .curveEaseIn, animations: {
             self.titleLabel?.alpha = 1.0
-            self.setTitle(self.titleAfterLoading, for: .normal)
+            self.imageAlpha = 1.0
         }) { (finished) in
             self.titleAfterLoading = nil
+            self.imageAfterLoading = nil
         }
     }
     
     //MARK: - Interface Builder Methods
     override open func layoutSubviews() {
         super.layoutSubviews()
+        self.imageView?.alpha = imageAlpha
         self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
     

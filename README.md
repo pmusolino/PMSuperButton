@@ -20,7 +20,7 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
 - Animations when the button is selected
 - Ripple button, where you can edit ripple color and ripple speed
 - Toggle functionality
-- Image View content mode
+- Image View content mode and alpha
 - Touch up inside closure
 - Loading
 - and many more
