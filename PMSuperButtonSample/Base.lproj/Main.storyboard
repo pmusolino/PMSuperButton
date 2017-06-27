@@ -24,60 +24,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-2" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-GZ-boJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mas-24-YKL" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="119" y="126" width="138" height="66"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="138" id="K1W-99-gZB"/>
-                                    <constraint firstAttribute="height" constant="66" id="cPf-yz-Okl"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.34509803919999998" green="0.74901960779999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.34509803919999998" green="0.74901960779999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="1" height="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.97851564486821496" green="0.70144316222932601" blue="0.91699220736821496" alpha="0.54422624143835618" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
-                                        <color key="value" red="1" green="0.53725490200000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME3-ob-e7r" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="123" y="330" width="130" height="44"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME3-ob-e7r" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="107" y="403" width="161" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.53725490200000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tOj-o7-Lar"/>
-                                    <constraint firstAttribute="width" constant="130" id="uZW-pI-7jS"/>
+                                    <constraint firstAttribute="height" constant="44" id="WDO-7l-0PO"/>
+                                    <constraint firstAttribute="width" constant="161" id="jY5-cj-fMg"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="STOP LOADING"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="6"/>
@@ -86,12 +40,29 @@
                                         <real key="value" value="0.90000000000000002"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
-                                        <color key="value" red="0.69019607839999997" green="0.41568627450000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
-                                        <color key="value" red="0.34509803919999998" green="0.74901960779999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.86666666670000003" green="0.31764705879999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="gradientEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEo-zV-4BK" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="99.5" y="467" width="176" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="ajz-3L-qsr"/>
+                                    <constraint firstAttribute="height" constant="44" id="bS7-el-zac"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Checkbox button" image="material_checkbox_checked"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="material_checkbox_checked"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="material_checkbox"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checkboxButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleWhenSelected">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAG-wd-zUb" customClass="PMSuperButton" customModule="PMSuperButton">
@@ -125,41 +96,73 @@
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Add to shopping cart" image="shopping_cart_icon"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEo-zV-4BK" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="99.5" y="467" width="176" height="44"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mas-24-YKL" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="88" y="317" width="198" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="ajz-3L-qsr"/>
-                                    <constraint firstAttribute="height" constant="44" id="bS7-el-zac"/>
+                                    <constraint firstAttribute="width" constant="198" id="KsR-SK-Y4b"/>
+                                    <constraint firstAttribute="height" constant="66" id="fYt-WW-nIx"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Checkbox button" image="material_checkbox_checked"/>
+                                <state key="normal" title="Button with loader">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="material_checkbox_checked"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="material_checkbox"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checkboxButton" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleWhenSelected">
-                                        <real key="value" value="1.5"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.34509803919999998" green="0.74901960779999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.97851564486821496" green="0.70144316222932601" blue="0.91699220736821496" alpha="0.54422624143835618" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="1" green="0.53725490200000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleWhenHighlighted">
+                                        <real key="value" value="0.80000000000000004"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IEo-zV-4BK" firstAttribute="top" secondItem="ME3-ob-e7r" secondAttribute="bottom" constant="20" id="0N9-ck-dVw"/>
                             <constraint firstItem="YTl-Jm-t8i" firstAttribute="top" secondItem="IEo-zV-4BK" secondAttribute="bottom" constant="20" id="4eq-Ox-SPC"/>
-                            <constraint firstItem="Mas-24-YKL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="7RG-Tb-aSK"/>
-                            <constraint firstItem="ME3-ob-e7r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9Q-az-KcE"/>
                             <constraint firstItem="CAG-wd-zUb" firstAttribute="top" secondItem="YTl-Jm-t8i" secondAttribute="bottom" constant="23" id="Al1-en-IQa"/>
-                            <constraint firstItem="Mas-24-YKL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BxH-QY-fok"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lbp-GZ-boJ" secondAttribute="bottom" id="Hgo-8d-UCw"/>
                             <constraint firstItem="YTl-Jm-t8i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="45" id="Iis-8O-hWL"/>
                             <constraint firstAttribute="trailing" secondItem="Lbp-GZ-boJ" secondAttribute="trailing" id="Ois-Dh-umc"/>
                             <constraint firstItem="IEo-zV-4BK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R41-bK-za4"/>
                             <constraint firstItem="Lbp-GZ-boJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U1x-qr-U1o"/>
-                            <constraint firstItem="ME3-ob-e7r" firstAttribute="top" secondItem="Mas-24-YKL" secondAttribute="bottom" constant="138" id="c1b-QT-MI9"/>
+                            <constraint firstItem="ME3-ob-e7r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ezn-2J-7z3"/>
                             <constraint firstItem="Lbp-GZ-boJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fBf-MH-Cp6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CAG-wd-zUb" secondAttribute="bottom" constant="25" id="jxB-gO-VJo"/>
                             <constraint firstItem="CAG-wd-zUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lfY-OH-SlO"/>
                             <constraint firstAttribute="trailing" secondItem="YTl-Jm-t8i" secondAttribute="trailing" constant="45" id="mEx-6e-lik"/>
+                            <constraint firstItem="Mas-24-YKL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pM3-gD-8N3"/>
+                            <constraint firstItem="ME3-ob-e7r" firstAttribute="top" secondItem="Mas-24-YKL" secondAttribute="bottom" constant="20" id="qaJ-w3-szq"/>
                         </constraints>
                     </view>
                     <connections>
