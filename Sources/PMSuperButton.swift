@@ -185,8 +185,6 @@ open class PMSuperButton: UIButton {
     
     //MARK: - Loading
     let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-    var titleAfterLoading: String?
-    var imageAfterLoading: UIImage?
     
     /**
      Show a loader inside the button, and enable or disable user interection while loading
@@ -219,8 +217,6 @@ open class PMSuperButton: UIButton {
             self.titleLabel?.alpha = 1.0
             self.imageAlpha = 1.0
         }) { (finished) in
-            self.titleAfterLoading = nil
-            self.imageAfterLoading = nil
         }
     }
     
