@@ -8,6 +8,10 @@
 
 PMSuperButton is a standard UIButton coming from the countryside, but with super powers!
 
+<p align="center">
+  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
+</p>
+
 
 ##Top 100 Coolest Super Powers:
 
