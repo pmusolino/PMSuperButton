@@ -26,7 +26,7 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 - [x] Edit everything about the shadows: color, opacity, offset
 - [x] Animations when the button is highlighted
 - [x] Animations when the button is selected
-- [x] Ripple button, where you can edit ripple color and ripple speed
+- [x] Ripple tap effect, where you can edit ripple color and ripple speed (like a Google Material button)
 - [x] Toggle functionality
 - [x] Image View content mode and alpha
 - [x] Touch up inside closure
