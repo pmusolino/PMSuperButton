@@ -19,18 +19,18 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 
 
 ## Top 100 Coolest Super Powers:
-- Edit everything directly from storyboard or code
-- Change border color, width
-- Customize the corner radius
-- Set a gradient background
-- Edit everything about the shadows: color, opacity, offset
-- Animations when the button is highlighted
-- Animations when the button is selected
-- Ripple button, where you can edit ripple color and ripple speed
-- Toggle functionality
-- Image View content mode and alpha
-- Touch up inside closure
-- Loading
+- [x] Edit everything directly from storyboard or code
+- [x] Change border color, width
+- [x] Customize the corner radius
+- [x] Set a gradient background
+- [x] Edit everything about the shadows: color, opacity, offset
+- [x] Animations when the button is highlighted
+- [x] Animations when the button is selected
+- [x] Ripple button, where you can edit ripple color and ripple speed
+- [x] Toggle functionality
+- [x] Image View content mode and alpha
+- [x] Touch up inside closure
+- [x] Loading
 - and many more
 
 Very easy to integrate in every project!
