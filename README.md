@@ -15,15 +15,12 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
 </p>
 
 #####A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder.
-
 <p align="center">
 <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/interface_builder.png?raw=true" alt="Icon"/>
 </p>
 
 
 ##Top 100 Coolest Super Powers:
-
-
 - Edit everything directly from storyboard or code
 - Change border color, width
 - Customize the corner radius
