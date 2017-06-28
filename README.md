@@ -15,8 +15,7 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
 </p>
 
-##### A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder.
-
+##### A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder, very easy to integrate in every project!
 
 
 ## Top 100 Coolest Super Powers:
@@ -34,8 +33,6 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 - [x] Loading
 - [x] **and many more**
 
-Very easy to integrate in every project!
-
 ## How it works
 The library allow you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard or from code.
 
@@ -51,6 +48,24 @@ First of all, drag & drop a new UIButton inside your view controller in storyboa
 </p>
 
 That's it! Now you are ready to customize your PMSuperButton from the `Attributes Inspector` of Interface Builder.
+
+##### How to use Touch Up Inside closure
+IBAction or addTarget() with #selector? No thanks, we have a closure for this:
+
+```
+myButton.touchUpInside {
+	print("This button was pressed!")
+}
+```
+
+##### How to show the loader indicator
+```
+//Pass `false` to disable user interaction while loading is showed
+myButton.showLoader(userInteraction: true)
+
+//Hide loader
+myButton.hideLoader()
+```
 
 ## Requirements
 
