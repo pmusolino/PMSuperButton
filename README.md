@@ -6,7 +6,7 @@
 [![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
 [![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
 
-PMSuperButton is a standard UIButton coming from the countryside, but with super powers!
+PMSuperButton is a powerful UIButton coming from the countryside, but with super powers!
 
 <p align="center">
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
@@ -14,13 +14,11 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
 </p>
 
-#####A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder.
-<p align="center">
-<img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/interface_builder.png?raw=true" alt="Icon"/>
-</p>
+##### A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder.
 
 
-##Top 100 Coolest Super Powers:
+
+## Top 100 Coolest Super Powers:
 - Edit everything directly from storyboard or code
 - Change border color, width
 - Customize the corner radius
@@ -38,8 +36,12 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
 Very easy to integrate in every project!
 
 ## Usage
-The library allow you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard.
+The library allow you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard or from code.
 
+
+<p align="center">
+<img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/interface_builder.png?raw=true" width=500 alt="Icon"/>
+</p>
 
 ## Requirements
 
