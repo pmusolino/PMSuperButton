@@ -10,6 +10,8 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
 
 <p align="center">
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
+  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/checkbox_button.gif?raw=true" alt="Icon"/>
+  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
 </p>
 
 
