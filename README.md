@@ -44,6 +44,14 @@ The library allow you to use all the features of standard UIButton with a lot of
 <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/interface_builder.png?raw=true" width=500 alt="Icon"/>
 </p>
 
+First of all, drag & drop a new UIButton inside your view controller in storyboard, then set the UIButton class to PMSuperButton:
+
+<p align="center">
+<img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/configuration1.png?raw=true" width=250 alt="Icon"/>
+</p>
+
+That's it! Now you are ready to customize your PMSuperButton from the `Attributes Inspector` of Interface Builder.
+
 ## Requirements
 
 - iOS 8.0+
