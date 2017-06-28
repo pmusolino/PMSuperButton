@@ -11,6 +11,7 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 <p align="center">
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/checkbox_button.gif?raw=true" alt="Icon"/>
+  <br>
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
 </p>
 
@@ -31,11 +32,11 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 - [x] Image View content mode and alpha
 - [x] Touch up inside closure
 - [x] Loading
-- and many more
+- [x] **and many more**
 
 Very easy to integrate in every project!
 
-## Usage
+## How it works
 The library allow you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard or from code.
 
 
@@ -48,3 +49,46 @@ The library allow you to use all the features of standard UIButton with a lot of
 - iOS 8.0+
 - Xcode 8+
 
+## CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate PMSuperButton into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'PMSuperButton'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+## Manually
+
+1. Download and drop ```/Sources``` folder in your project.  
+2. Congratulations!  
+
+## Contributing
+
+- If you **need help** or you'd like to **ask a general question**, open an issue.
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
+
+## MIT License
+
+PMSuperButton is available under the MIT license. See the LICENSE file for more info.
+
+Made with ❤️ by [Paolo Musolino](https://github.com/Codeido).
