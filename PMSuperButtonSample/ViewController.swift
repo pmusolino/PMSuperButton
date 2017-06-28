@@ -13,18 +13,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var firstButton: PMSuperButton!
     @IBOutlet weak var secondButton: PMSuperButton!
+    @IBOutlet weak var thirdButton: PMSuperButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         firstButton.touchUpInside {
-            self.firstButton.showLoader()
             print("Hello World")
         }
         
         secondButton.touchUpInside {
-            self.firstButton.hideLoader()
         }
         
+        var isLoading = false
+        thirdButton.touchUpInside {
+            isLoading = !isLoading
+            isLoading == true ? self.thirdButton.showLoader() : self.thirdButton.hideLoader()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
