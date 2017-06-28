@@ -13,7 +13,7 @@ PMSuperButton is a standard UIButton coming from the countryside, but with super
 
 - Edit everything directly from storyboard or code
 - Change border color, width
-- Change corner radius
+- Customize the corner radius
 - Set a gradient background
 - Edit everything about the shadows: color, opacity, offset
 - Animations when the button is highlighted
