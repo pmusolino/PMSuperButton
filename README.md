@@ -6,10 +6,11 @@
 [![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
 [![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
 
-PMSuperButton is a powerful UIButton coming from the countryside, but with super powers!
+PMSuperButton is a powerful UIButton coming from the countryside, but with super powers! 😎
 
 <p align="center">
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
+  <br>
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/checkbox_button.gif?raw=true" alt="Icon"/>
   <br>
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
@@ -19,18 +20,18 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 
 
 ## Top 100 Coolest Super Powers:
-- [x] Edit everything directly from storyboard or code
+- [x] Edit everything directly from storyboard or code 😏
 - [x] Change border color, width
 - [x] Customize the corner radius
 - [x] Set a gradient background
 - [x] Edit everything about the shadows: color, opacity, offset
-- [x] Animations when the button is highlighted
+- [x] Animations when the button is highlighted 🤗
 - [x] Animations when the button is selected
-- [x] Ripple tap effect, where you can edit ripple color and ripple speed (like a Google Material button)
+- [x] Ripple tap effect, where you can edit ripple color and ripple speed (like a Google Material button) 😮
 - [x] Toggle functionality
 - [x] Image View content mode and alpha
-- [x] Touch up inside closure
-- [x] Loading
+- [x] Touch up inside closure 🤠
+- [x] Loading 🤜🤛
 - [x] **and many more**
 
 ## How it works
