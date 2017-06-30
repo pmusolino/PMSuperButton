@@ -31,7 +31,7 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 - [x] Toggle functionality
 - [x] Image View content mode and alpha
 - [x] Touch up inside closure 🤠
-- [x] Loading 🤜🤛
+- [x] Loader 🤜🤛
 - [x] **and many more**
 
 ## How it works
