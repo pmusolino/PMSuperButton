@@ -6,11 +6,12 @@ Pod::Spec.new do |s|
     A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder, very easy to integrate in every project!
   DESC
   s.homepage     = "https://github.com/Codeido/PMSuperButton"
+  s.screenshots  = "https://raw.githubusercontent.com/Codeido/PMSuperButton/master/docs/interface_builder.png"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Paolo Musolino" => "info@codeido.com" }
   s.social_media_url   = "https://github.com/Codeido/PMSuperButton"
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => ".git", :tag => s.version.to_s }
+  s.source       = { :git => ".git", :tag => s.version }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
 end
