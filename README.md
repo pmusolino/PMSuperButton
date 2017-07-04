@@ -5,6 +5,7 @@
 [![Language](https://img.shields.io/badge/Swift-3-orange.svg)]()
 [![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
 [![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellow.svg)](https://github.com/Carthage/Carthage)
 
 PMSuperButton is a powerful UIButton coming from the countryside, but with super powers! 😎
 
@@ -97,6 +98,25 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
+## Carthage
+----------------
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate PMSuperButton into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "Codeido/PMSuperButton"
+```
+
+Run `carthage update` to build the framework and drag the built `PMSuperButton.framework` into your Xcode project.
 
 ## Manually
 
