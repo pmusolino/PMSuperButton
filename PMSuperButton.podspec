@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.screenshots  = "https://raw.githubusercontent.com/Codeido/PMSuperButton/master/docs/interface_builder.png"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Paolo Musolino" => "info@codeido.com" }
-  s.social_media_url   = "https://github.com/Codeido/PMSuperButton"
+  s.social_media_url   = "http://twitter.com/pmusolino"
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => ".git", :tag => s.version }
+  s.source       = { :git => "https://github.com/Codeido/PMSuperButton.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
 end
