@@ -17,7 +17,7 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
 </p>
 
-##### A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder, very easy to integrate in every project!
+##### An easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder, very easy to integrate into every project!
 
 
 ## Top 100 Coolest Super Powers:
@@ -33,10 +33,10 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 - [x] Image View content mode and alpha
 - [x] Touch up inside closure 🤠
 - [x] Loader 🤜🤛
-- [x] **and many more**
+- [x] **and much more**
 
 ## How it works
-The library allow you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard or from code.
+The library allows you to use all the features of standard UIButton with a lot of new cool features, customizable from Storyboard or from code.
 
 
 <p align="center">
