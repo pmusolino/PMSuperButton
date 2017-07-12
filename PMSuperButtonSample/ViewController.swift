@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstButton: PMSuperButton!
     @IBOutlet weak var secondButton: PMSuperButton!
     @IBOutlet weak var thirdButton: PMSuperButton!
+    @IBOutlet weak var fourthButton: PMSuperButton!
     
     override func viewDidLoad() {
         
@@ -29,6 +30,10 @@ class ViewController: UIViewController {
         thirdButton.touchUpInside {
             isLoading = !isLoading
             isLoading == true ? self.thirdButton.showLoader() : self.thirdButton.hideLoader()
+        }
+        
+        fourthButton.touchUpInside {
+            self.fourthButton.showCircleLoader()
         }
     }
     

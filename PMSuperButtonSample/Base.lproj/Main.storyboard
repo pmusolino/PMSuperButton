@@ -152,11 +152,37 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-z9-4VS" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="88" y="229" width="198" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="t8o-Es-mnc"/>
+                                </constraints>
+                                <color key="tintColor" red="0.14984736169999999" green="0.46267584789999999" blue="0.54513439119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Circle loader"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.14984736169999999" green="0.46267584789999999" blue="0.54513439119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showCircleLoader" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircleLoaderTouchEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IEo-zV-4BK" firstAttribute="top" secondItem="ME3-ob-e7r" secondAttribute="bottom" constant="20" id="0N9-ck-dVw"/>
                             <constraint firstItem="YTl-Jm-t8i" firstAttribute="top" secondItem="IEo-zV-4BK" secondAttribute="bottom" constant="20" id="4eq-Ox-SPC"/>
+                            <constraint firstItem="iRe-z9-4VS" firstAttribute="width" secondItem="Mas-24-YKL" secondAttribute="width" id="8Ie-Rv-owF"/>
                             <constraint firstItem="CAG-wd-zUb" firstAttribute="top" secondItem="YTl-Jm-t8i" secondAttribute="bottom" constant="23" id="Al1-en-IQa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lbp-GZ-boJ" secondAttribute="bottom" id="Hgo-8d-UCw"/>
                             <constraint firstItem="YTl-Jm-t8i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="45" id="Iis-8O-hWL"/>
@@ -168,12 +194,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CAG-wd-zUb" secondAttribute="bottom" constant="25" id="jxB-gO-VJo"/>
                             <constraint firstItem="CAG-wd-zUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lfY-OH-SlO"/>
                             <constraint firstAttribute="trailing" secondItem="YTl-Jm-t8i" secondAttribute="trailing" constant="45" id="mEx-6e-lik"/>
+                            <constraint firstItem="iRe-z9-4VS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mTX-TW-YcK"/>
                             <constraint firstItem="Mas-24-YKL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pM3-gD-8N3"/>
                             <constraint firstItem="ME3-ob-e7r" firstAttribute="top" secondItem="Mas-24-YKL" secondAttribute="bottom" constant="20" id="qaJ-w3-szq"/>
+                            <constraint firstItem="Mas-24-YKL" firstAttribute="top" secondItem="iRe-z9-4VS" secondAttribute="bottom" constant="48" id="y1p-1U-Bth"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstButton" destination="Mas-24-YKL" id="dKZ-Ip-4ls"/>
+                        <outlet property="fourthButton" destination="iRe-z9-4VS" id="ipf-CF-8DY"/>
                         <outlet property="secondButton" destination="ME3-ob-e7r" id="bJw-R4-z4o"/>
                         <outlet property="thirdButton" destination="CAG-wd-zUb" id="Zoi-f5-xRV"/>
                     </connections>
