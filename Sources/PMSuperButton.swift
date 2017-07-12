@@ -221,11 +221,10 @@ open class PMSuperButton: UIButton {
         circleLoader.center = newCenter
     }
     
-    open func hideCircleLoader(userInteraction: Bool = true){
+    open func hideCircleLoader(){
         guard self.superview?.subviews.contains(circleLoader) == true else{
             return
         }
-        self.isUserInteractionEnabled = userInteraction
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveLinear], animations: {
             self.circleLoader.stopAnimation()
