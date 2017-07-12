@@ -157,6 +157,86 @@ open class PMSuperButton: UIButton {
         self.isSelected = !self.isSelected
     }
     
+    //MARK: - Material Circle Button
+    // circle loader view
+    @IBInspectable open var showCircleLoader: Bool = false{
+        didSet{
+            guard showCircleLoader else {
+                circleLoader.removeFromSuperview()
+                return
+            }
+            self.superview?.addSubview(circleLoader)
+        }
+    }
+    
+    @IBInspectable open var isCircleLoaderTouchEnabled: Bool = false{
+        didSet{
+            circleLoader.isUserInteractionEnabled = isCircleLoaderTouchEnabled
+        }
+    }
+    
+    fileprivate lazy var circleLoader: MaterialCircleLoader = {
+        let view = MaterialCircleLoader(frame: self.frame)
+        view.alpha = 0.0
+        view.strokeColor = self.tintColor?.cgColor
+        view.touchAction = {
+            self.hideCircleLoader()
+        }
+        return view
+    }()
+    
+    open func showCircleLoader(userInteraction: Bool = true){
+        guard self.superview?.subviews.contains(circleLoader) == false else{
+            animateCircleLoader(userInteraction: userInteraction)
+            return
+        }
+        self.superview?.addSubview(circleLoader)
+        animateCircleLoader(userInteraction: userInteraction)
+    }
+    
+    private func animateCircleLoader(userInteraction: Bool = true){
+        self.isUserInteractionEnabled = userInteraction
+        setCircleLoaderFrame()
+       
+        UIView.animate(withDuration: 0.1, delay: 0.5, options: [.curveLinear], animations: {
+            self.titleLabel?.alpha = 0.0
+            self.imageAlpha = 0.0
+            self.alpha = 0.0
+            self.transform = .init(scaleX: 0.1, y: 1.0)
+        }) { (completion) in
+            self.circleLoader.startAnimation()
+            self.circleLoader.alpha = 1.0
+        }
+    }
+    
+    private func setCircleLoaderFrame(){
+        guard self.superview?.subviews.contains(circleLoader) == true else{
+            return
+        }
+        var newFrame: CGRect = circleLoader.frame
+        newFrame.size.width = self.frame.height
+        var newCenter: CGPoint = circleLoader.center
+        newCenter.x = self.center.x
+        circleLoader.frame = newFrame
+        circleLoader.center = newCenter
+    }
+    
+    open func hideCircleLoader(){
+        guard self.superview?.subviews.contains(circleLoader) == true else{
+            return
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveLinear], animations: {
+            self.circleLoader.stopAnimation()
+            self.circleLoader.alpha = 0.0
+        }) { (completion) in
+            self.transform = .identity
+            self.titleLabel?.alpha = 1.0
+            self.imageAlpha = 1.0
+            self.alpha = 1.0
+        }
+    }
+    
     //MARK: - Image
     ///Image UIButton content mode
     @IBInspectable open var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
