@@ -2,7 +2,7 @@
   <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/logo.png?raw=true" alt="Icon"/>
 </p>
 
-[![Language](https://img.shields.io/badge/Swift-3-orange.svg)]()
+[![Language](https://img.shields.io/badge/Swift-4-orange.svg)]()
 [![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
 [![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellow.svg)](https://github.com/Carthage/Carthage)
@@ -33,6 +33,7 @@ PMSuperButton is a powerful UIButton coming from the countryside, but with super
 - [x] Image View content mode and alpha
 - [x] Touch up inside closure 🤠
 - [x] Loader 🤜🤛
+- [x] Swift 3 & Swift 4 support
 - [x] **and much more**
 
 ## How it works
@@ -72,7 +73,7 @@ myButton.hideLoader()
 ## Requirements
 
 - iOS 8.0+
-- Xcode 8+
+- Xcode 9+
 
 ## CocoaPods
 
@@ -122,6 +123,11 @@ Run `carthage update` to build the framework and drag the built `PMSuperButton.f
 
 1. Download and drop ```/Sources``` folder in your project.  
 2. Congratulations!  
+
+## Swift compatibility
+- If you use Swift 4 or higher, you can use the [latest release](https://github.com/Codeido/PMSuperButton/releases).
+
+- If you use Swift 3, you can use the [release 1.0.0](https://github.com/Codeido/PMSuperButton/releases/tag/1.0.0).
 
 ## Contributing
 
