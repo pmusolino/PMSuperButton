@@ -153,7 +153,7 @@ open class PMSuperButton: UIButton {
     @IBInspectable open var checkedImage: UIImage?
     @IBInspectable open var uncheckedImage: UIImage?
     
-    func buttonChecked(sender:AnyObject){
+    @objc func buttonChecked(sender:AnyObject){
         self.isSelected = !self.isSelected
     }
     
@@ -179,7 +179,7 @@ open class PMSuperButton: UIButton {
         self.action = action
     }
     
-    func tapped(sender: PMSuperButton) {
+    @objc func tapped(sender: PMSuperButton) {
         self.action?()
     }
     
