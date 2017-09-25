@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,8 +14,8 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PMSuperButtonSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="FKb-CH-TjD"/>
+                        <viewControllerLayoutGuide type="bottom" id="yGq-TN-PZQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -23,13 +23,14 @@
                         <subviews>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-GZ-boJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME3-ob-e7r" customClass="PMSuperButton" customModule="PMSuperButton">
                                 <rect key="frame" x="107" y="403" width="161" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.53725490200000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="WDO-7l-0PO"/>
-                                    <constraint firstAttribute="width" constant="161" id="jY5-cj-fMg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="jY5-cj-fMg"/>
                                 </constraints>
                                 <state key="normal" title="Gradient button"/>
                                 <userDefinedRuntimeAttributes>
@@ -51,7 +52,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEo-zV-4BK" customClass="PMSuperButton" customModule="PMSuperButton">
                                 <rect key="frame" x="99.5" y="467" width="176" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="ajz-3L-qsr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="176" id="ajz-3L-qsr"/>
                                     <constraint firstAttribute="height" constant="44" id="bS7-el-zac"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -70,7 +71,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAG-wd-zUb" customClass="PMSuperButton" customModule="PMSuperButton">
                                 <rect key="frame" x="99" y="598" width="176" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="Kua-FZ-3S3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="176" id="Kua-FZ-3S3"/>
                                     <constraint firstAttribute="height" constant="44" id="lOZ-9Z-hX7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -98,6 +99,7 @@
                                 <rect key="frame" x="45" y="531" width="285" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nCu-Cm-S2Q"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="pKQ-QG-KTB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.34509803919999998" green="0.74901960779999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,7 +112,7 @@
                                 <rect key="frame" x="88" y="317" width="198" height="66"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="198" id="KsR-SK-Y4b"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="198" id="KsR-SK-Y4b"/>
                                     <constraint firstAttribute="height" constant="66" id="fYt-WW-nIx"/>
                                 </constraints>
                                 <state key="normal" title="Ripple Button">
@@ -156,18 +158,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IEo-zV-4BK" firstAttribute="top" secondItem="ME3-ob-e7r" secondAttribute="bottom" constant="20" id="0N9-ck-dVw"/>
+                            <constraint firstItem="YTl-Jm-t8i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tB-VE-3xC"/>
                             <constraint firstItem="YTl-Jm-t8i" firstAttribute="top" secondItem="IEo-zV-4BK" secondAttribute="bottom" constant="20" id="4eq-Ox-SPC"/>
                             <constraint firstItem="CAG-wd-zUb" firstAttribute="top" secondItem="YTl-Jm-t8i" secondAttribute="bottom" constant="23" id="Al1-en-IQa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lbp-GZ-boJ" secondAttribute="bottom" id="Hgo-8d-UCw"/>
-                            <constraint firstItem="YTl-Jm-t8i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="45" id="Iis-8O-hWL"/>
+                            <constraint firstItem="yGq-TN-PZQ" firstAttribute="top" secondItem="Lbp-GZ-boJ" secondAttribute="bottom" id="Hgo-8d-UCw"/>
                             <constraint firstAttribute="trailing" secondItem="Lbp-GZ-boJ" secondAttribute="trailing" id="Ois-Dh-umc"/>
                             <constraint firstItem="IEo-zV-4BK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R41-bK-za4"/>
                             <constraint firstItem="Lbp-GZ-boJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U1x-qr-U1o"/>
                             <constraint firstItem="ME3-ob-e7r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ezn-2J-7z3"/>
                             <constraint firstItem="Lbp-GZ-boJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fBf-MH-Cp6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CAG-wd-zUb" secondAttribute="bottom" constant="25" id="jxB-gO-VJo"/>
+                            <constraint firstItem="yGq-TN-PZQ" firstAttribute="top" secondItem="CAG-wd-zUb" secondAttribute="bottom" constant="25" id="jxB-gO-VJo"/>
                             <constraint firstItem="CAG-wd-zUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lfY-OH-SlO"/>
-                            <constraint firstAttribute="trailing" secondItem="YTl-Jm-t8i" secondAttribute="trailing" constant="45" id="mEx-6e-lik"/>
                             <constraint firstItem="Mas-24-YKL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pM3-gD-8N3"/>
                             <constraint firstItem="ME3-ob-e7r" firstAttribute="top" secondItem="Mas-24-YKL" secondAttribute="bottom" constant="20" id="qaJ-w3-szq"/>
                         </constraints>
@@ -184,7 +185,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="640" height="640"/>
+        <image name="background" width="1280" height="1280"/>
         <image name="material_checkbox" width="18" height="18"/>
         <image name="material_checkbox_checked" width="18" height="18"/>
         <image name="shopping_cart_icon" width="21" height="21"/>
