@@ -32,8 +32,10 @@ class ViewController: UIViewController {
             isLoading == true ? self.thirdButton.showLoader() : self.thirdButton.hideLoader()
         }
         
+        var isCircleLoaderActive = false
         fourthButton.touchUpInside {
-            self.fourthButton.showCircleLoader()
+            isCircleLoaderActive = !isCircleLoaderActive
+            isCircleLoaderActive == true ? self.fourthButton.showCircleLoader() : self.fourthButton.hideCircleLoader()
         }
     }
     

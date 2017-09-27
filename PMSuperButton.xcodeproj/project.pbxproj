@@ -14,7 +14,6 @@
 		454FFF6D1EF1927A00F1C34C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFF6B1EF1927A00F1C34C /* LaunchScreen.storyboard */; };
 		454FFF7B1EF19C6900F1C34C /* PMSuperButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* PMSuperButton.framework */; };
 		52D6D9871BEFF229002C0205 /* PMSuperButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* PMSuperButton.framework */; };
-		6A1A39D31F13757100472407 /* MaterialCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A39D21F13757100472407 /* MaterialCircleLoader.swift */; };
 		8933C7851EB5B820000D00A4 /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* PMSuperButton.swift */; };
 		8933C7901EB5B82D000D00A4 /* PMSuperButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* PMSuperButtonTests.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +45,6 @@
 		454FFF6E1EF1927A00F1C34C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* PMSuperButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMSuperButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* PMSuperButton-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PMSuperButton-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A1A39D21F13757100472407 /* MaterialCircleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialCircleLoader.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* PMSuperButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButtonTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* PMSuperButton.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PMSuperButton.plist; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* PMSuperButton.swift */,
-				6A1A39D21F13757100472407 /* MaterialCircleLoader.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C7851EB5B820000D00A4 /* PMSuperButton.swift in Sources */,
-				6A1A39D31F13757100472407 /* MaterialCircleLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

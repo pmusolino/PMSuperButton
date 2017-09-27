@@ -157,83 +157,134 @@ open class PMSuperButton: UIButton {
         self.isSelected = !self.isSelected
     }
     
-    //MARK: - Material Circle Button
-    // circle loader view
-    @IBInspectable open var showCircleLoader: Bool = false{
-        didSet{
-            guard showCircleLoader else {
-                circleLoader.removeFromSuperview()
-                return
-            }
-            self.superview?.addSubview(circleLoader)
+    //MARK: - Material Circle Loader Button
+    // circle loader variables
+    @IBInspectable open var showCircleLoader: Bool = false
+    @IBInspectable open var circleLoaderColor: UIColor? = UIColor.clear
+    private var copyTitle: String? = ""
+    
+    override open var layer: CAShapeLayer {
+        get {
+            return super.layer as! CAShapeLayer
         }
     }
     
-    @IBInspectable open var isCircleLoaderTouchEnabled: Bool = false{
-        didSet{
-            circleLoader.isUserInteractionEnabled = isCircleLoaderTouchEnabled
+    override open class var layerClass: AnyClass { return CAShapeLayer.self }
+    
+    // circle loader set up
+    private func setUpCircleLoader() {
+        layer.fillColor = nil
+        layer.strokeColor = circleLoaderColor?.cgColor
+        layer.lineWidth = 1.5
+        setPath()
+        layoutIfNeeded()
+    }
+    
+    private func setPath() {
+        layer.path = UIBezierPath(ovalIn: bounds.insetBy(dx: layer.lineWidth / 2, dy: layer.lineWidth / 2)).cgPath
+    }
+
+    
+    //Animation set up
+    struct Delay {
+        let secondsSincePriorDelay: CFTimeInterval
+        let start: CGFloat
+        let length: CGFloat
+        init(_ secondsSincePriorDelay: CFTimeInterval, _ start: CGFloat, _ length: CGFloat) {
+            self.secondsSincePriorDelay = secondsSincePriorDelay
+            self.start = start
+            self.length = length
         }
     }
     
-    fileprivate lazy var circleLoader: MaterialCircleLoader = {
-        let view = MaterialCircleLoader(frame: self.frame)
-        view.alpha = 0.0
-        view.strokeColor = self.tintColor?.cgColor
-        view.touchAction = {
-            self.hideCircleLoader()
-        }
-        return view
-    }()
+    // Rotation delay
+    private var delays: [Delay] {
+        return [
+            Delay(0.0, 0.000, 0.7),
+            Delay(0.2, 0.500, 0.5),
+            Delay(0.2, 1.000, 0.3),
+            Delay(0.2, 1.500, 0.1),
+            Delay(0.2, 1.875, 0.1),
+            Delay(0.2, 2.250, 0.3),
+            Delay(0.2, 2.625, 0.5),
+            Delay(0.2, 3.000, 0.7),
+        ]
+    }
     
+    //Animation actions
+    private func startCircleLoaderAnimation() {
+        var time: CFTimeInterval = 0
+        var times = [CFTimeInterval]()
+        var start: CGFloat = 0
+        var rotations = [CGFloat]()
+        var strokeEnds = [CGFloat]()
+        
+        let totalSeconds = self.delays.reduce(0) { $0 + $1.secondsSincePriorDelay }
+        
+        for Delay in self.delays {
+            time += Delay.secondsSincePriorDelay
+            times.append(time / totalSeconds)
+            start = Delay.start
+            rotations.append(start * 2 * CGFloat(Double.pi))
+            strokeEnds.append(Delay.length)
+        }
+        
+        times.append(times.last!)
+        rotations.append(rotations[0])
+        strokeEnds.append(strokeEnds[0])
+        
+        animateKeyPath(keyPath: "strokeEnd", duration: totalSeconds, times: times, values: strokeEnds)
+        animateKeyPath(keyPath: "transform.rotation", duration: totalSeconds, times: times, values: rotations)
+        
+    }
+    
+    private func stopCircleLoaderAnimation() {
+        layer.removeAllAnimations()
+        layer.strokeColor = UIColor.clear.cgColor
+        layer.lineWidth = 0.0
+    }
+    
+    private func animateKeyPath(keyPath: String, duration: CFTimeInterval, times: [CFTimeInterval], values: [CGFloat]) {
+        let animation = CAKeyframeAnimation(keyPath: keyPath)
+        animation.keyTimes = times as [NSNumber]?
+        animation.values = values
+        animation.calculationMode = kCAAnimationLinear
+        animation.duration = duration
+        animation.repeatCount = Float.infinity
+        layer.add(animation, forKey: animation.keyPath)
+    }
+    
+    // Public
     open func showCircleLoader(userInteraction: Bool = true){
-        guard self.superview?.subviews.contains(circleLoader) == false else{
-            animateCircleLoader(userInteraction: userInteraction)
+        guard showCircleLoader else {
             return
         }
-        self.superview?.addSubview(circleLoader)
-        animateCircleLoader(userInteraction: userInteraction)
-    }
-    
-    private func animateCircleLoader(userInteraction: Bool = true){
-        self.isUserInteractionEnabled = userInteraction
-        setCircleLoaderFrame()
-       
-        UIView.animate(withDuration: 0.1, delay: 0.5, options: [.curveLinear], animations: {
-            self.titleLabel?.alpha = 0.0
+        let rippleAnimDelay = ripple ? rippleSpeed : 0.5
+        UIView.animate(withDuration: 0.1, delay: rippleAnimDelay, options: [.curveLinear], animations: {
+            self.copyTitle = self.title(for: .normal)
             self.imageAlpha = 0.0
-            self.alpha = 0.0
-            self.transform = .init(scaleX: 0.1, y: 1.0)
+            self.transform = .init(scaleX: 0.2, y: 1.0)
         }) { (completion) in
-            self.circleLoader.startAnimation()
-            self.circleLoader.alpha = 1.0
+            self.setTitle("", for: .normal)
+            self.layer.borderColor = UIColor.clear.cgColor
+            
+            self.setUpCircleLoader()
+            self.startCircleLoaderAnimation()
         }
-    }
-    
-    private func setCircleLoaderFrame(){
-        guard self.superview?.subviews.contains(circleLoader) == true else{
-            return
-        }
-        var newFrame: CGRect = circleLoader.frame
-        newFrame.size.width = self.frame.height
-        var newCenter: CGPoint = circleLoader.center
-        newCenter.x = self.center.x
-        circleLoader.frame = newFrame
-        circleLoader.center = newCenter
     }
     
     open func hideCircleLoader(){
-        guard self.superview?.subviews.contains(circleLoader) == true else{
+        guard showCircleLoader else {
             return
         }
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveLinear], animations: {
-            self.circleLoader.stopAnimation()
-            self.circleLoader.alpha = 0.0
+            self.stopCircleLoaderAnimation()
         }) { (completion) in
             self.transform = .identity
-            self.titleLabel?.alpha = 1.0
             self.imageAlpha = 1.0
-            self.alpha = 1.0
+            self.layer.borderColor = self.borderColor.cgColor
+            self.setTitle(self.copyTitle, for: .normal)
         }
     }
     
