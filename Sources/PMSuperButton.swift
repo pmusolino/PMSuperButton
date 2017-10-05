@@ -223,6 +223,7 @@ open class PMSuperButton: UIButton {
     //MARK: - Interface Builder Methods
     override open func layoutSubviews() {
         super.layoutSubviews()
+        gradient?.frame = self.layer.bounds
         self.imageView?.alpha = imageAlpha
         self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
