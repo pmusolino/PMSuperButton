@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 @IBDesignable
 open class PMSuperButton: UIButton {
@@ -181,6 +182,9 @@ open class PMSuperButton: UIButton {
     
     @objc func tapped(sender: PMSuperButton) {
         self.action?()
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        AudioServicesPlaySystemSound(1519)
     }
     
     //MARK: - Loading
