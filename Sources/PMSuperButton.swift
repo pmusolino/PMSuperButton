@@ -25,6 +25,9 @@ open class PMSuperButton: UIButton {
     @IBInspectable open var cornerRadius: CGFloat = 0{
         didSet{
             self.layer.cornerRadius = cornerRadius
+            if let gradientLayer = gradient {
+                gradientLayer.cornerRadius = cornerRadius
+            }
         }
     }
     @IBInspectable open var shadowColor: UIColor = UIColor.clear{
@@ -78,15 +81,16 @@ open class PMSuperButton: UIButton {
         
         gradient?.removeFromSuperlayer()
         gradient = CAGradientLayer()
-        gradient!.frame = self.layer.bounds
-        gradient!.colors = [gradientStartColor.cgColor, gradientEndColor.cgColor]
-        gradient!.startPoint = CGPoint(x: 0, y: 0)
-        if (gradientHorizontal){
-            gradient!.endPoint = CGPoint(x: 1, y: 0)
-        }else{
-            gradient!.endPoint = CGPoint(x: 0, y: 1)
-        }
-        self.layer.insertSublayer(gradient!, below: self.imageView?.layer)
+        guard let gradient = gradient else { return }
+        
+        gradient.frame = self.layer.bounds
+        gradient.colors = [gradientStartColor.cgColor, gradientEndColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = gradientHorizontal ? CGPoint(x: 1, y: 0) : CGPoint(x: 0, y: 1)
+        
+        gradient.cornerRadius = self.cornerRadius
+        
+        self.layer.insertSublayer(gradient, below: self.imageView?.layer)
     }
     
     //MARK: - Animations
