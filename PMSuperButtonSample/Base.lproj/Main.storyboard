@@ -26,12 +26,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME3-ob-e7r" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="107" y="403" width="161" height="44"/>
+                                <rect key="frame" x="83.5" y="403" width="208" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.53725490200000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="WDO-7l-0PO"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="jY5-cj-fMg"/>
                                 </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Gradient button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -47,6 +48,9 @@
                                         <color key="value" red="0.69019607843137254" green="0.41568627450980389" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="gradientEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEo-zV-4BK" customClass="PMSuperButton" customModule="PMSuperButton">
