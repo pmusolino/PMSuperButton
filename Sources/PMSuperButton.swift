@@ -54,9 +54,7 @@ open class PMSuperButton: UIButton {
     }
     @IBInspectable open var letterSpacing: CGFloat = 0 {
         didSet {
-            let attributes = getAttributedString()
-            attributes.addAttribute(NSAttributedStringKey.kern, value: letterSpacing, range: NSRange(location: 0, length: attributes.length))
-            self.setAttributedTitle(attributes, for: .normal)
+            self.setAttributedTitle(getAttributedString(with: self.titleLabel?.text, letterSpacing: letterSpacing), for: self.state)
         }
     }
     
@@ -94,6 +92,13 @@ open class PMSuperButton: UIButton {
             gradient!.endPoint = CGPoint(x: 0, y: 1)
         }
         self.layer.insertSublayer(gradient!, below: self.imageView?.layer)
+    }
+    
+    // MARK: Overrides
+    
+    override open func setTitle(_ title: String?, for state: UIControlState) {
+        // setTitle always sets attributed text
+        self.setAttributedTitle(getAttributedString(with: title, letterSpacing: letterSpacing), for: state)
     }
     
     //MARK: - Animations
@@ -240,15 +245,20 @@ open class PMSuperButton: UIButton {
     
     // MARK: Private methods
     
-    // Return button's label attributed string based on optional attributedText or text
-    private func getAttributedString() -> NSMutableAttributedString {
-        if let attr = self.titleLabel?.attributedText {
-            return NSMutableAttributedString(attributedString: attr)
+    // Get the NSMutableAttributedString with kern value: optional("string") ?? "";
+    // Button's previous attributedText is kept, only mutableString value is changed.
+    private func getAttributedString(with string:String?, letterSpacing spacing:CGFloat) -> NSMutableAttributedString {
+        var attr:NSMutableAttributedString!
+        if let string = string, let attrText = self.titleLabel?.attributedText {
+            let attrString = NSMutableAttributedString(attributedString:attrText)
+            attrString.mutableString.setString(string)
+            attr = attrString
+        } else {
+            attr = NSMutableAttributedString(string:string ?? "")
         }
-        if let text = self.titleLabel?.text {
-            return NSMutableAttributedString(string: text)
-        }
-        return NSMutableAttributedString()
+        
+        attr.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length: attr.length))
+        return attr
     }
 }
 
