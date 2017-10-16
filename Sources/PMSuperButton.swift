@@ -52,13 +52,6 @@ open class PMSuperButton: UIButton {
             setupGradient()
         }
     }
-    @IBInspectable open var letterSpacing: CGFloat = 0 {
-        didSet {
-            let attributes = getAttributedString()
-            attributes.addAttribute(NSAttributedStringKey.kern, value: letterSpacing, range: NSRange(location: 0, length: attributes.length))
-            self.setAttributedTitle(attributes, for: .normal)
-        }
-    }
     
     //MARK: - Gradient Background
     @IBInspectable open var gradientStartColor: UIColor = UIColor.clear{
@@ -237,19 +230,7 @@ open class PMSuperButton: UIButton {
     
     override open func prepareForInterfaceBuilder() {
     }
-    
-    // MARK: Private methods
-    
-    // Return button's label attributed string based on optional attributedText or text
-    private func getAttributedString() -> NSMutableAttributedString {
-        if let attr = self.titleLabel?.attributedText {
-            return NSMutableAttributedString(attributedString: attr)
-        }
-        if let text = self.titleLabel?.text {
-            return NSMutableAttributedString(string: text)
-        }
-        return NSMutableAttributedString()
-    }
+
 }
 
 extension PMSuperButton: CAAnimationDelegate{

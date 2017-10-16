@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PMSuperButton"
-  s.version      = "2.0.2"
+  s.version      = "2.0.3"
   s.summary      = "PMSuperButton is a powerful UIButton coming from the countryside, but with super powers!"
   s.description  = <<-DESC
     A easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder, very easy to integrate in every project!
