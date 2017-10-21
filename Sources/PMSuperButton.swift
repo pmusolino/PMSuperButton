@@ -54,7 +54,7 @@ open class PMSuperButton: UIButton {
     }
     @IBInspectable open var letterSpacing: CGFloat = 0 {
         didSet {
-            self.setAttributedTitle(getAttributedString(with: self.titleLabel?.text, letterSpacing: letterSpacing), for: self.state)
+            super.setAttributedTitle(addAttribute(with: self.titleLabel?.text, letterSpacing: letterSpacing), for: self.state)
         }
     }
     
@@ -97,8 +97,16 @@ open class PMSuperButton: UIButton {
     // MARK: Overrides
     
     override open func setTitle(_ title: String?, for state: UIControlState) {
-        // setTitle always sets attributed text
-        self.setAttributedTitle(getAttributedString(with: title, letterSpacing: letterSpacing), for: state)
+        super.setAttributedTitle(addAttribute(with: title, letterSpacing: letterSpacing), for: state)
+    }
+    
+    override open func setAttributedTitle(_ title: NSAttributedString?, for state: UIControlState) {
+        let attr = getAttributedString(string: title?.string)
+        super.setAttributedTitle(attr, for: state)
+    }
+    
+    override open func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+        super.setAttributedTitle(addAttribute(titleColor: color), for:state)
     }
     
     //MARK: - Animations
@@ -245,19 +253,37 @@ open class PMSuperButton: UIButton {
     
     // MARK: Private methods
     
-    // Get the NSMutableAttributedString with kern value: optional("string") ?? "";
-    // Button's previous attributedText is kept, only mutableString value is changed.
-    private func getAttributedString(with string:String?, letterSpacing spacing:CGFloat) -> NSMutableAttributedString {
+    // Add letter spacing attribute
+    private func addAttribute(with string:String?, letterSpacing spacing:CGFloat) -> NSMutableAttributedString {
+        let attr = getAttributedString(string: string)
+        attr.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length: attr.length))
+        return attr
+    }
+    
+    // Add title color attribute
+    private func addAttribute(titleColor:UIColor?) -> NSMutableAttributedString {
+        let attr = getAttributedString()
+        if let color = titleColor {
+            attr.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: NSRange(location: 0, length: attr.length))
+        }
+        return attr
+    }
+    
+    // Get titleLabel current attribute string
+    private func getAttributedString(string:String? = nil) -> NSMutableAttributedString {
         var attr:NSMutableAttributedString!
-        if let string = string, let attrText = self.titleLabel?.attributedText {
-            let attrString = NSMutableAttributedString(attributedString:attrText)
-            attrString.mutableString.setString(string)
-            attr = attrString
+        if let attrText = self.titleLabel?.attributedText {
+            attr = NSMutableAttributedString(attributedString:attrText)
         } else {
-            attr = NSMutableAttributedString(string:string ?? "")
+            attr = NSMutableAttributedString(string:"")
         }
         
-        attr.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length: attr.length))
+        if let string = string {
+            attr.mutableString.setString(string)
+        } else if let string = self.titleLabel?.text {
+            attr.mutableString.setString(string)
+        }
+        
         return attr
     }
 }
