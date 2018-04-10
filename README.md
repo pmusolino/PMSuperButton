@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/logo.png?raw=true" alt="Icon"/>
+  <img src="https://github.com/pmusolino/PMSuperButton/blob/master/docs/logo.png?raw=true" alt="Icon"/>
 </p>
 
 [![Language](https://img.shields.io/badge/Swift-4-orange.svg)]()
-[![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/Codeido/PMSuperButton/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/pmusolino/PMSuperButton/blob/master/LICENSE)
 [![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellow.svg)](https://github.com/Carthage/Carthage)
 
 PMSuperButton is a powerful UIButton coming from the countryside, but with super powers! 😎
 
 <p align="center">
-  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
+  <img src="https://github.com/pmusolino/PMSuperButton/blob/master/docs/ripple_button.gif?raw=true" alt="Icon"/>
   <br>
-  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/checkbox_button.gif?raw=true" alt="Icon"/>
+  <img src="https://github.com/pmusolino/PMSuperButton/blob/master/docs/checkbox_button.gif?raw=true" alt="Icon"/>
   <br>
-  <img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
+  <img src="https://github.com/pmusolino/PMSuperButton/blob/master/docs/loader_button.gif?raw=true" alt="Icon"/>
 </p>
 
 ##### An easy way to create custom and complex buttons with custom attributes, directly added to the iOS Interface Builder, very easy to integrate into every project!
@@ -41,13 +41,13 @@ The library allows you to use all the features of standard UIButton with a lot o
 
 
 <p align="center">
-<img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/interface_builder.png?raw=true" width=500 alt="Icon"/>
+<img src="https://github.com/pmusolino/PMSuperButton/blob/master/docs/interface_builder.png?raw=true" width=500 alt="Icon"/>
 </p>
 
 First of all, drag & drop a new UIButton inside your view controller in storyboard, then set the UIButton class to PMSuperButton:
 
 <p align="center">
-<img src="https://github.com/Codeido/PMSuperButton/blob/master/docs/configuration1.png?raw=true" width=250 alt="Icon"/>
+<img src="https://github.com/pmusolino/PMSuperButton/blob/master/docs/configuration1.png?raw=true" width=250 alt="Icon"/>
 </p>
 
 That's it! Now you are ready to customize your PMSuperButton from the `Attributes Inspector` of Interface Builder.
@@ -114,7 +114,7 @@ $ brew install carthage
 To integrate PMSuperButton into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Codeido/PMSuperButton"
+github "pmusolino/PMSuperButton"
 ```
 
 Run `carthage update` to build the framework and drag the built `PMSuperButton.framework` into your Xcode project.
@@ -125,9 +125,9 @@ Run `carthage update` to build the framework and drag the built `PMSuperButton.f
 2. Congratulations!  
 
 ## Swift compatibility
-- If you use Swift 4 or higher, you can use the [latest release](https://github.com/Codeido/PMSuperButton/releases).
+- If you use Swift 4 or higher, you can use the [latest release](https://github.com/pmusolino/PMSuperButton/releases).
 
-- If you use Swift 3, you can use the [release 1.0.0](https://github.com/Codeido/PMSuperButton/releases/tag/1.0.0).
+- If you use Swift 3, you can use the [release 1.0.0](https://github.com/pmusolino/PMSuperButton/releases/tag/1.0.0).
 
 ## Contributing
 
@@ -141,4 +141,4 @@ Run `carthage update` to build the framework and drag the built `PMSuperButton.f
 
 PMSuperButton is available under the MIT license. See the LICENSE file for more info.
 
-Made with ❤️ by [Paolo Musolino](https://github.com/Codeido).
+Made with ❤️ by [Paolo Musolino](https://github.com/pmusolino).
