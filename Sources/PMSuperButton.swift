@@ -193,6 +193,9 @@ open class PMSuperButton: UIButton {
         get{
             return indicator.isAnimating
         }
+        set{
+            
+        }
     }
     
     /**
@@ -202,6 +205,7 @@ open class PMSuperButton: UIButton {
         guard self.subviews.contains(indicator) == false else {
             return
         }
+        isLoading = true
         self.isUserInteractionEnabled = userInteraction
         indicator.isUserInteractionEnabled = false
         indicator.center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
@@ -218,7 +222,7 @@ open class PMSuperButton: UIButton {
         guard self.subviews.contains(indicator) == true else {
             return
         }
-        
+        isLoading = false
         self.isUserInteractionEnabled = true
         self.indicator.stopAnimating()
         self.indicator.removeFromSuperview()
