@@ -25,10 +25,8 @@ class ViewController: UIViewController {
         secondButton.touchUpInside {
         }
         
-        var isLoading = false
-        thirdButton.touchUpInside {
-            isLoading = !isLoading
-            isLoading == true ? self.thirdButton.showLoader() : self.thirdButton.hideLoader()
+        thirdButton.touchUpInside { [weak self] in
+            self?.thirdButton.isLoading == false ? self?.thirdButton.showLoader() : self?.thirdButton.hideLoader()
         }
     }
     

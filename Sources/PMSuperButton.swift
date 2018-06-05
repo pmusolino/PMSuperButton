@@ -189,6 +189,11 @@ open class PMSuperButton: UIButton {
     
     //MARK: - Loading
     let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    public var isLoading: Bool{
+        get{
+            return indicator.isAnimating
+        }
+    }
     
     /**
      Show a loader inside the button, and enable or disable user interection while loading
