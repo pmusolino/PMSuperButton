@@ -163,9 +163,9 @@ open class PMSuperButton: UIButton {
     
     //MARK: - Image
     ///Image UIButton content mode
-    @IBInspectable open var imageViewContentMode: Int = UIViewContentMode.scaleToFill.rawValue{
+    @IBInspectable open var imageViewContentMode: Int = UIView.ContentMode.scaleToFill.rawValue{
         didSet{
-            imageView?.contentMode = UIViewContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
+            imageView?.contentMode = UIView.ContentMode(rawValue: imageViewContentMode) ?? .scaleToFill
         }
     }
     @IBInspectable open var imageAlpha: CGFloat = 1.0 {
@@ -188,7 +188,7 @@ open class PMSuperButton: UIButton {
     }
     
     //MARK: - Loading
-    let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    let indicator: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
     public var isLoading: Bool = false
     
     /**
@@ -271,7 +271,7 @@ extension PMSuperButton: CAAnimationDelegate{
         
         // Set animation to be consistent on completion
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         
         // Add animation to the view's layer
         let fade = CAKeyframeAnimation(keyPath: "opacity")
