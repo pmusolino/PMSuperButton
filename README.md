@@ -136,6 +136,18 @@ Run `carthage update` to build the framework and drag the built `PMSuperButton.f
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
+## Acknowledgements
+
+**Made with ❤️ by [Paolo Musolino](https://github.com/pmusolino).**
+
+***Follow me on:***
+#### 💼 [Linkedin](https://www.linkedin.com/in/paolomusolino/)
+
+#### 🤖 [Twitter](https://twitter.com/pmusolino)
+
+#### 🌇 [Instagram](https://www.instagram.com/pmusolino/)
+
+#### 👨🏼‍🎤 [Facebook](https://www.facebook.com/paolomusolino)
 
 ## MIT License
 
