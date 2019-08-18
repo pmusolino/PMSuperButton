@@ -75,11 +75,12 @@ open class PMSuperButton: UIButton {
     var gradient: CAGradientLayer?
     
     func setupGradient(){
+        gradient?.removeFromSuperlayer()
+        
         guard gradientEnabled != false else{
             return
         }
         
-        gradient?.removeFromSuperlayer()
         gradient = CAGradientLayer()
         guard let gradient = gradient else { return }
         
