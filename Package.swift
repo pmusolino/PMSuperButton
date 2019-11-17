@@ -5,12 +5,12 @@ import PackageDescription
 let package = Package(
     name: "PMSuperButton",
     products: [
-        .library(name: "PMSuperButton", targets: ["PMSuperButton"])
+        .library(name: "PMSuperButton", targets: ["PMSuperButton-iOS"])
     ],
     targets: [
         .target(
-            name: "PMSuperButton",
-            path: "PMSuperButton"
+            name: "PMSuperButton-iOS",
+            path: "PMSuperButton-iOS"
         )
     ]
 )
