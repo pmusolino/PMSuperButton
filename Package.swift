@@ -9,8 +9,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "PMSuperButton-iOS",
-            path: "PMSuperButton"
+            name: "PMSuperButton-iOS"
         )
     ]
 )
