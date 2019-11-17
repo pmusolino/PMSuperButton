@@ -9,7 +9,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "PMSuperButton-iOS"
+            name: "PMSuperButton-iOS",
+            path: "Sources"
         )
     ]
 )
