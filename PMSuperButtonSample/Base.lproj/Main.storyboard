@@ -154,6 +154,8 @@
                                         <color key="value" red="1" green="0.36862745098039218" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hapticFeedback" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasHapticFeedback" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
