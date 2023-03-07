@@ -56,6 +56,26 @@ open class PMSuperButton: UIButton {
         }
     }
     
+    //MARK: - Image Appearance
+    private var _imageTintColor: UIColor?
+    @available(iOSApplicationExtension 13.0, *)
+    @IBInspectable
+    var imageTintColor: UIColor {
+        get {
+            if let color = _imageTintColor {
+                return color
+            } else {
+                return .white
+            }
+        }
+        set {
+            _imageTintColor = newValue
+            if let image = self.image(for: .normal) {
+                self.setImage(image.withTintColor(newValue), for: .normal)
+            }
+        }
+    }
+    
     //MARK: - Gradient Background
     @IBInspectable open var gradientStartColor: UIColor = UIColor.clear{
         didSet{
