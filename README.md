@@ -4,7 +4,7 @@
 
 [![Language](https://img.shields.io/badge/Swift-4%20%26%205-orange.svg)]()
 [![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/pmusolino/PMSuperButton/blob/master/LICENSE)
-[![Pod version](https://img.shields.io/cocoapods/v/PMSuperButton.svg?style=flat)](https://cocoapods.org/pods/PMSuperButton)
+[![Pod version](https://img.shields.io/badge/Cocoapods-Compatible%20-blue)](https://cocoapods.org/pods/PMSuperButton)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellow.svg)](https://github.com/Carthage/Carthage)
 
 PMSuperButton is a powerful UIButton coming from the countryside, but with super powers! 😎
