@@ -3,7 +3,7 @@
 </p>
 
 [![Language](https://img.shields.io/badge/Swift-4%20%26%205-orange.svg)]()
-[![GitHub license](https://img.shields.io/cocoapods/l/PMSuperButton.svg)](https://github.com/pmusolino/PMSuperButton/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-MIT-lightgrey)](https://github.com/pmusolino/PMSuperButton/blob/master/LICENSE)
 [![Pod version](https://img.shields.io/badge/Cocoapods-Compatible%20-blue)](https://cocoapods.org/pods/PMSuperButton)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellow.svg)](https://github.com/Carthage/Carthage)
 
